@@ -30,9 +30,9 @@ class IMGtools():
         # update list
         for bit in range(8):
             if data_list[bit]:
-                data_list[bit] = 1
-            else:
                 data_list[bit] = 0
+            else:
+                data_list[bit] = 1
         print(data_list)
         for offset in range(8):
             out_data |= (data_list[offset] << offset)
@@ -112,9 +112,9 @@ class IMGtools():
             count = 0
             for x_pixel in pic__line:
                 if x_pixel:
-                    data.writelines('0')
-                else:
                     data.writelines('1')
+                else:
+                    data.writelines('0')
                 count += 1
                 # print(x_pixel)
                 if count < 64:
@@ -134,11 +134,11 @@ class IMGtools():
 
 
 if __name__ == '__main__':
-    origin_pic = './images/lt158.png'
+    origin_pic = './images/nihao.png'
     pre_tool = IMGprepare()
     pre_tool.resolution_change(origin_pic)
 
-    pic_path = './output/img/reschg-lt158.png'
+    pic_path = './output/img/reschg-nihao.png'
     handle = IMGtools()
 
     # 图像色彩转换
